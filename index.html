@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zerlina Meisya Putri | Personal Website</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      padding:20px 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(15,23,42,0.8);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo{
+      font-size:24px;
+      font-weight:700;
+      color:#60a5fa;
+    }
+
+    nav a{
+      margin-left:25px;
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+      font-weight:500;
+      cursor:pointer;
+    }
+
+    nav a:hover,
+    nav a.active{
+      color:#60a5fa;
+    }
+
+    section{
+      min-height:100vh;
+      padding:120px 10%;
+      display:none;
+      animation:fade 0.5s ease;
+    }
+
+    section.active{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      text-align:center;
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .hero h1{
+      font-size:60px;
+      margin-bottom:15px;
+    }
+
+    .hero h1 span{
+      color:#60a5fa;
+    }
+
+    .hero p{
+      max-width:700px;
+      line-height:1.8;
+      color:#cbd5e1;
+    }
+
+    .btn{
+      margin-top:30px;
+      padding:14px 35px;
+      border:none;
+      background:#60a5fa;
+      color:white;
+      border-radius:30px;
+      cursor:pointer;
+      font-size:16px;
+      transition:0.3s;
+      text-decoration:none;
+      display:inline-block;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 20px rgba(96,165,250,0.3);
+    }
+
+    .card-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      width:100%;
+      margin-top:40px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      padding:25px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.08);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      background:rgba(96,165,250,0.1);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#60a5fa;
+    }
+
+    .about-text{
+      max-width:900px;
+      line-height:2;
+      color:#cbd5e1;
+      margin-top:20px;
+    }
+
+    .skills{
+      margin-top:30px;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:15px;
+    }
+
+    .skills span{
+      background:#1e293b;
+      padding:12px 20px;
+      border-radius:30px;
+      border:1px solid rgba(255,255,255,0.1);
+      transition:0.3s;
+    }
+
+    .skills span:hover{
+      background:#60a5fa;
+      transform:scale(1.05);
+    }
+
+    .contact-box{
+      margin-top:30px;
+      background:rgba(255,255,255,0.05);
+      padding:30px;
+      border-radius:20px;
+      width:100%;
+      max-width:600px;
+    }
+
+    .contact-box p{
+      margin:15px 0;
+      color:#cbd5e1;
+      font-size:17px;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      color:#94a3b8;
+      border-top:1px solid rgba(255,255,255,0.08);
+      background:#0b1120;
+    }
+
+    @media(max-width:768px){
+
+      header{
+        padding:20px 5%;
+      }
+
+      nav a{
+        margin-left:15px;
+        font-size:14px;
+      }
+
+      .hero h1{
+        font-size:40px;
+      }
+
+      section{
+        padding:120px 7%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Zerlina</div>
+
+    <nav>
+      <a class="tab active" onclick="showPage('home')">Home</a>
+      <a class="tab" onclick="showPage('about')">About</a>
+      <a class="tab" onclick="showPage('activities')">Activities</a>
+      <a class="tab" onclick="showPage('contact')">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section id="home" class="active">
+    <div class="hero">
+      <h1>Hi, I'm <span>Zerlina Meisya Putri</span></h1>
+
+      <p>
+        Siswi SMK Sandikta jurusan TKJ yang memiliki minat di bidang jaringan
+        komputer, server, dan administrasi Linux Debian. Menyukai pembelajaran
+        teknologi terutama pada konfigurasi DNS Server, Web Server, SSH Server,
+        serta implementasi WordPress di Debian.
+      </p>
+
+      <a class="btn" onclick="showPage('about')">Explore More</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h1>About Me</h1>
+
+    <div class="about-text">
+      Halo! Saya <b>Zerlina Meisya Putri</b>, seorang siswi dari SMK Sandikta
+      jurusan Teknik Komputer dan Jaringan (TKJ). Saya memiliki ketertarikan
+      dalam dunia jaringan komputer dan server administration. Selama belajar
+      di jurusan TKJ, saya mempelajari berbagai konfigurasi server berbasis
+      Linux Debian seperti DNS Server, Web Server, SSH Server, hingga
+      instalasi dan konfigurasi WordPress.
+      <br><br>
+      Saya juga mempelajari dasar-dasar konfigurasi Mikrotik dan Cisco untuk
+      kebutuhan jaringan komputer. Saya senang mencoba hal baru, belajar
+      teknologi modern, serta mengembangkan kemampuan di bidang IT dan networking.
+    </div>
+
+    <div class="skills">
+      <span>DNS Server</span>
+      <span>Web Server</span>
+      <span>SSH Server</span>
+      <span>Mikrotik Basic</span>
+      <span>Cisco Basic</span>
+      <span>Debian Linux</span>
+      <span>WordPress</span>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES -->
+  <section id="activities">
+    <h1>Activities & Learning</h1>
+
+    <div class="card-container">
+
+      <div class="card">
+        <h3>DNS Server Debian</h3>
+        <p>
+          Belajar membuat dan mengkonfigurasi DNS Server menggunakan Debian
+          Linux untuk menghubungkan domain ke alamat IP server.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Web Server Debian</h3>
+        <p>
+          Membuat Web Server menggunakan Apache2 di Debian serta melakukan
+          konfigurasi hosting website sederhana.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>SSH Server Debian</h3>
+        <p>
+          Mengkonfigurasi SSH Server agar dapat melakukan remote server
+          management dengan aman melalui terminal.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>WordPress Debian</h3>
+        <p>
+          Belajar instalasi dan konfigurasi WordPress pada Debian untuk
+          membuat website.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h1>Contact Me</h1>
+
+    <div class="contact-box">
+      <p><b>Email :</b> zerlinameisyap@gmail.com</p>
+      <p><b>Instagram :</b> @z.ptsya</p>
+      <p>
+        Terima kasih telah mengunjungi website personal saya.
+        Semoga website ini dapat menjadi portofolio pembelajaran dan pengalaman saya di bidang TKJ.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Zerlina Meisya Putri | Personal Website
+  </footer>
+
+  <script>
+    function showPage(pageId){
+
+      const sections = document.querySelectorAll("section");
+      sections.forEach(section => {
+        section.classList.remove("active");
+      });
+
+      document.getElementById(pageId).classList.add("active");
+
+      const tabs = document.querySelectorAll(".tab");
+      tabs.forEach(tab => {
+        tab.classList.remove("active");
+      });
+
+      event.target.classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
